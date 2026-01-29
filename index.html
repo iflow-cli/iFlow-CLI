@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>智能拍照摄像工具</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>智能拍照摄像工具</h1>
+      <p>基于最佳角度和黄金比例的智能拍摄助手</p>
+    </header>
+    
+    <main>
+      <!-- 相机权限和选择拍摄主体 -->
+      <section class="camera-setup">
+        <div class="permission-section">
+          <button id="startCameraBtn" class="btn-primary">开启相机</button>
+          <p id="permissionStatus">请先开启相机权限</p>
+        </div>
+        
+        <div class="subject-selection">
+          <h3>选择拍摄主体</h3>
+          <div class="subject-buttons">
+            <button class="subject-btn active" data-subject="landscape">风景</button>
+            <button class="subject-btn" data-subject="people">人物</button>
+            <button class="subject-btn" data-subject="animal">动物</button>
+            <button class="subject-btn" data-subject="object">物品</button>
+          </div>
+        </div>
+      </section>
+      
+      <!-- 相机界面 -->
+      <section class="camera-section" id="cameraSection" style="display: none;">
+        <div class="camera-container">
+          <video id="video" autoplay playsinline></video>
+          <canvas id="canvas" style="display: none;"></canvas>
+          
+          <!-- 黄金比例网格 -->
+          <div class="golden-ratio-grid" id="goldenRatioGrid">
+            <div class="grid-line vertical" style="left: 38.2%;"></div>
+            <div class="grid-line vertical" style="left: 61.8%;"></div>
+            <div class="grid-line horizontal" style="top: 38.2%;"></div>
+            <div class="grid-line horizontal" style="top: 61.8%;"></div>
+          </div>
+          
+          <!-- 拍摄提示 -->
+          <div class="shooting-hint" id="shootingHint"></div>
+          
+          <!-- 拍摄控制 -->
+          <div class="camera-controls">
+            <div class="capture-mode">
+              <label>
+                <input type="radio" name="captureMode" value="manual" checked> 手动拍摄
+              </label>
+              <label>
+                <input type="radio" name="captureMode" value="auto"> 自动抓拍
+              </label>
+              <label>
+                <input type="radio" name="captureMode" value="combined"> 手动+自动
+              </label>
+            </div>
+            
+            <button id="captureBtn" class="btn-capture">拍摄</button>
+            <button id="stopCameraBtn" class="btn-secondary">关闭相机</button>
+          </div>
+        </div>
+        
+        <!-- 预览区域 -->
+        <div class="preview-section">
+          <h3>预览</h3>
+          <img id="preview" src="" alt="拍摄预览" style="display: none;">
+          <div id="previewPlaceholder">拍摄的照片将显示在这里</div>
+        </div>
+      </section>
+    </main>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

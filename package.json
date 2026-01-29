@@ -1,0 +1,17 @@
+{
+  "name": "smart-camera-app",
+  "version": "1.0.0",
+  "description": "智能拍照摄像工具，基于最佳角度和黄金比例",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx live-server --open=index.html"
+  },
+  "keywords": ["camera", "photography", "golden-ratio", "ai"],
+  "author": "iFlow CLI",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.0",
+    "live-server": "^1.2.2"
+  }
+}
